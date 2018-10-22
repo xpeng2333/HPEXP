@@ -6,8 +6,10 @@
 //           全局常量定义
 //           常用自定义类型
 //           通过结构体定义
-// 其    他：用 #include <filename.h> 格式来引用标准库的头文件（编译器将从标准库目录开始搜索）
-//           用 #include "filename.h" 格式来引用非标准库的头文件（编译器将从用户的工作目录开始搜索）
+// 其    他：用 #include <filename.h>
+// 格式来引用标准库的头文件（编译器将从标准库目录开始搜索）
+//           用 #include "filename.h"
+//           格式来引用非标准库的头文件（编译器将从用户的工作目录开始搜索）
 // 修改记录:     // 修改历史记录列表，每条修改记录应包括修改日期、修改
 // 者及修改内容简述
 // 1. 时间:2014.8.4
@@ -44,7 +46,8 @@
 #define max(a, b) (((a) > (b)) ? (a) : (b))
 #endif
 // 求最近整数（四舍五入）
-#define NINT(a) ((a >= 0) ? (int)(a + 0.5) : (int)(a - 0.5)) // 同Fortran语言IDNINT
+#define NINT(a)                                                                \
+    ((a >= 0) ? (int)(a + 0.5) : (int)(a - 0.5)) // 同Fortran语言IDNINT
 
 // 全局常量定义
 // 允许的误差（即精度）
@@ -80,46 +83,41 @@ typedef char FixedString[MAXSTRLEN];
 
 // 通用结构定义
 // 相量结构
-typedef struct
-{
-	double dRms;   // 有效值
-	double dTheta; // 相角
+typedef struct {
+    double dRms;   // 有效值
+    double dTheta; // 相角
 } PhasorStru;
 
 // 发电机潮流结构
-//typedef struct
+// typedef struct
 //{
 //	double dP0;      // 有功功率初值
 //	double dQ0;	     // 无功功率初值
 //}GenFLStru;
 
 // 元件变量结构
-typedef struct
-{
-	int iCTyp; // 元件类型
-	int iCNo;  // 元件序号
-	int iVNo;  // 变量序号
+typedef struct {
+    int iCTyp; // 元件类型
+    int iCNo;  // 元件序号
+    int iVNo;  // 变量序号
 } CVarIndexStru;
 
 // 可转换为三个单相元件的三相元件结构
-typedef struct
-{
-	int iNum;		// 元件数目
-	int *piIndexNo; // 三相元件转换为三个单相元件时，其A相在单相元件中的编号
+typedef struct {
+    int iNum;       // 元件数目
+    int *piIndexNo; // 三相元件转换为三个单相元件时，其A相在单相元件中的编号
 } ThrPhaseConvtStru;
 
 // 触发脉冲信息结构
-typedef struct
-{
-	int iPulse;   // 触发脉冲(01信号)
-	double dTTag; // 脉冲分度
+typedef struct {
+    int iPulse;   // 触发脉冲(01信号)
+    double dTTag; // 脉冲分度
 } TrigPulseStru;
 
 // 导纳阵元素信息结构
-typedef struct
-{
-	int iNo;	 // 行号或列号
-	double dVal; // 值
+typedef struct {
+    int iNo;     // 行号或列号
+    double dVal; // 值
 } YElmStru;
 
 #endif

@@ -4,8 +4,10 @@
 // 作    者:       版本:        时间: // 作者、版本及完成日期
 // 描    述: 程序debug相关常量定义：包括打印提示信息类型、输出位置
 //           程序debug相关接口函数声明
-// 其    他：用 #include <filename.h> 格式来引用标准库的头文件（编译器将从标准库目录开始搜索）
-//           用 #include "filename.h" 格式来引用非标准库的头文件（编译器将从用户的工作目录开始搜索）
+// 其    他：用 #include <filename.h>
+// 格式来引用标准库的头文件（编译器将从标准库目录开始搜索）
+//           用 #include "filename.h"
+//           格式来引用非标准库的头文件（编译器将从用户的工作目录开始搜索）
 // 修改记录:     // 修改历史记录列表，每条修改记录应包括修改日期、修改
 // 者及修改内容简述
 // 1. 时间:2016.02.19
@@ -37,18 +39,21 @@
 // Debug文件的打开和关闭
 extern void DebugFileOpenClose(const char *pcProjOut, int iIsOpen);
 // 根据类型iType打印输入信息str至位置iOut
-//extern void printString(FixedString str,int iType,int iOut);
+// extern void printString(FixedString str,int iType,int iOut);
 // 打印double型一维数组arr[iNB]
-extern void printDArray(int iNB, const double *pdArr, const char *str, int iOut);
+extern void printDArray(int iNB, const double *pdArr, const char *str,
+                        int iOut);
 // 打印int型一维数组arr[iNB]
 extern void printIArray(int iNB, const int *piArr, const char *str, int iOut);
 // 打印double型二维数组arr[iNRow][iNCol]
-extern void printD2Array(int iNRow, int iNCol, double **ppdArr, const char *str, int iOut);
+extern void printD2Array(int iNRow, int iNCol, double **ppdArr, const char *str,
+                         int iOut);
 // 打印仿真信息
-//extern void printSimMsg(int iECTyp,int iECNo,int iENo,int iOut,FixedString str);
-//extern void printSimMsg(char *str);
+// extern void printSimMsg(int iECTyp,int iECNo,int iENo,int iOut,FixedString
+// str); extern void printSimMsg(char *str);
 extern void printSimMsg(const char *str, ...);
 // 处理错误信息
-//extern void dealSimMsg(int iECTyp,int iECNo,int iENo,int iType,int iOut,FixedString str);
+// extern void dealSimMsg(int iECTyp,int iECNo,int iENo,int iType,int
+// iOut,FixedString str);
 
 #endif

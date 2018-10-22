@@ -4,8 +4,10 @@
 // 作    者:       版本:        时间: // 作者、版本及完成日期
 // 描    述: 线性方程组
 //           包含：外部函数声明
-// 其    他：用 #include <filename.h> 格式来引用标准库的头文件（编译器将从标准库目录开始搜索）
-//           用 #include "filename.h" 格式来引用非标准库的头文件（编译器将从用户的工作目录开始搜索）
+// 其    他：用 #include <filename.h>
+// 格式来引用标准库的头文件（编译器将从标准库目录开始搜索）
+//           用 #include "filename.h"
+//           格式来引用非标准库的头文件（编译器将从用户的工作目录开始搜索）
 // 修改记录:     // 修改历史记录列表，每条修改记录应包括修改日期、修改
 // 者及修改内容简述
 // 1. 时间:
@@ -46,8 +48,8 @@ extern void initMem_UMatReal(SprsUMatRealStru *U);
 extern void deallocate_UMatReal(SprsUMatRealStru *U);
 
 // 第二种LU分解和网络求解：xdc提供
-//cmt：初始形成G阵时，需调用符号因子分解LU_SymbolicSymG，为U阵分配空间
-//cmt：每一时步，如果G阵结构未变，只有值变化，可以只调用值分解LU_NumbericSymG
+// cmt：初始形成G阵时，需调用符号因子分解LU_SymbolicSymG，为U阵分配空间
+// cmt：每一时步，如果G阵结构未变，只有值变化，可以只调用值分解LU_NumbericSymG
 //稀疏实数对称矩阵符号因子分解，确定U阵结构和元素个数
 extern void LU_SymbolicSymG(SprsMatRealStru *pG, SprsUMatRealStru *pFU);
 //稀疏实数对称矩阵数值因子分解，确定U阵元素值
