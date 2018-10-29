@@ -185,6 +185,7 @@ void SparseMatrix_adlink(SprsMatRealStru *pA) {
             r = linkn[k];
             linkp[i] = m;
             linkn[i] = r;
+            //若i!=k则可加速
             linkp[k] = i;
             linkn[k] = irow;
             wb[j] = i;
@@ -331,10 +332,10 @@ void LU_SetUMatECountsG(SprsMatRealStru *pG, int *pParent,
     rs_u[1] = 1;
     cs_u[1] = 1;
     pU->uMax.iNzs = 0;
-    for (i = 2; i <= iDim + 1; i++) {
-        pU->uMax.iNzs = pU->uMax.iNzs + colcnt[i - 1];
-        rs_u[i] = rs_u[i - 1] + colcnt[i - 1];
-        cs_u[i] = cs_u[i - 1] + rowcnt[i - 1];
+    for (i = 1; i <= iDim; i++) {
+        pU->uMax.iNzs = pU->uMax.iNzs + colcnt[i];
+        rs_u[i + 1] = rs_u[i] + colcnt[i];
+        cs_u[i + 1] = cs_u[i] + rowcnt[i];
     }
 
     d_u = (double *)calloc(iDim + 1, sizeof(double));
