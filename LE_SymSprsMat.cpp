@@ -540,9 +540,9 @@ void LU_NumbericSymG(SprsMatRealStru *pG, SprsUMatRealStru *pFU) {
             nzs[j]++;
         }
 
-        if (dk >= 0.0 && fabs(dk) < 1.0e-20)
+        if (dk >= 0.0 && dk < 1.0e-20)
             dk = 1.0e-20;
-        if (dk < 0.0 && fabs(dk) < 1.0e-20)
+        if (dk < 0.0 && dk > -1.0e-20)
             dk = -1.0e-20;
 
         d_u[i] = dk;
