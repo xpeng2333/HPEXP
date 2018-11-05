@@ -415,7 +415,8 @@ int main(int argc, char *argv[]) {
     printf("The Program is Running...\n");
     // 获取仿真开始时间
     timeStart = clock();
-    for (j = 0; j < 1000; j++) {
+    // 1000->10
+    for (j = 0; j < 10; j++) {
 
         LU_SymbolicSymG(&A, &U);
         LU_NumbericSymG(&A, &U);
